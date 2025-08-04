@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        form{
+            background-color: rgb(247, 249, 249);
+            border-radius: 8px;
+            padding: 30px;
+            
+        }
+        body{
+            background-color: rgb(196, 162, 228);
+            height: 100%;
+        }
+        h1{
+            text-align: center;
+            margin-bottom:20px ;
+            color: rgb(58, 35, 35);
+        }
+        
+        .input-box{
+            margin-bottom:15px ;
+        }
+        .input-box input{
+            padding:3px;
+            width: 100%;
+            border-radius: 0%;
+            border-width: 2px;
+        }
+        .input-box label{
+            color: rgb(66, 60, 60);
+        }
+        button{
+            background-color: rgb(83, 243, 43);
+            padding: 3px;
+            width: 60%;
+        }
+        .success-msg{
+            display: none;
+            text-align: center;
+            color: green;
+      margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <form id="reg">
+        <h1>Registration Form</h1>
+        <div class="input-box">
+        <label for="fname">First Name</label><br>
+        <input type="text" id="fname" name="fname" required><br>
+        </div>
+        <div class="input-box">
+        <label for="lname">Last Name</label><br>
+        <input type="text" id="lname" name="lname" required><br>
+        </div>
+        <div class="input-box">
+        <label for="email">Email</label><br>
+        <input type="text" id="email" name="email" required><br>
+        </div>
+        <div class="input-box">
+        <label for="phno">Contact</label><br>
+        <input type="text" id="phno" name="phno" pattern="\d{10}" required><br><br>
+        </div>
+        <button type="submit">Register</button>
+        <div class="success-msg" id="successmsg">
+            Thank You
+        </div>
+    </form>
+    </div>
+    <script>
+    const form = document.getElementById('reg');
+    const successmsg = document.getElementById('successmsg');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); 
+      successmsg.style.display = 'block'; 
+      form.reset(); 
+    });
+  </script>
+</body>
+</html>
